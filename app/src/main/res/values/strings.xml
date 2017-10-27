@@ -8,4 +8,5 @@
     <string name="action_share">Share</string>
 
     <string name="up">Up</string>
+    <string name="msg_article_load_success">Articles loaded successfully!</string>
 </resources>
