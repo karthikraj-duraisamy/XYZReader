@@ -2,6 +2,7 @@ package net.karthikraj.excercise.xyzreader.ui;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -12,6 +13,7 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +31,8 @@ import net.karthikraj.excercise.xyzreader.data.ArticleLoader;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+
+import static android.text.Html.FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -123,7 +127,11 @@ public class ArticleDetailFragment extends Fragment implements
             return;
         }
 
-        mBodyView.setText(cursor.getString(ArticleLoader.Query.BODY));
+        if(Build.VERSION.SDK_INT >= 24) {
+            mBodyView.setText(Html.fromHtml(cursor.getString(ArticleLoader.Query.BODY), FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH));
+        } else {
+            mBodyView.setText(Html.fromHtml(cursor.getString(ArticleLoader.Query.BODY), FROM_HTML_SEPARATOR_LINE_BREAK_PARAGRAPH));
+        }
 
         if (mToolbar != null) {
             mToolbar.setNavigationIcon(R.drawable.ic_arrow_back);
