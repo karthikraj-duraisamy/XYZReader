@@ -12,7 +12,6 @@
 
         <net.karthikraj.excercise.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
-            android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:background="@color/material_grey_300"
             android:layout_height="wrap_content" />
