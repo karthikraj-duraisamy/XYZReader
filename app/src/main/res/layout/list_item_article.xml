@@ -14,7 +14,7 @@
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:background="@color/material_grey_300"
-            android:layout_height="wrap_content" />
+            android:layout_height="@dimen/image_dynamic_height" />
 
         <TextView
             android:id="@+id/article_title"

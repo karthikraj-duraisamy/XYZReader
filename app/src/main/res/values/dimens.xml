@@ -27,5 +27,6 @@
     <dimen name="article_padding_top">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="image_dynamic_height">0dp</dimen>
 
 </resources>
